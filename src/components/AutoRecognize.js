@@ -193,7 +193,7 @@ export default function AutoRecognize() {
 
   async function sendDescriptor(descriptor) {
     try {
-      const res = await fetch("http://employee-recognition-backend.onrender.com/api/students/recognize", {
+      const res = await fetch("https://employee-recognition-backend.onrender.com/api/students/recognize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ descriptor })

@@ -88,7 +88,7 @@ export default function RegisterStudent() {
       form.append("phone", phone);
       form.append("descriptor", JSON.stringify(descriptor));
 
-      const res = await fetch("http://employee-recognition-backend.onrender.com/api/students/register", {
+      const res = await fetch("https://employee-recognition-backend.onrender.com/api/students/register", {
         method: "POST",
         body: form
       });

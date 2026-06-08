@@ -28,7 +28,7 @@ export default function AttendanceReport() {
 
   async function fetchDepartments() {
     try {
-      const res = await fetch('http://employee-recognition-backend.onrender.com/api/students/departments');
+      const res = await fetch('https://employee-recognition-backend.onrender.com/api/students/departments');
       const data = await res.json();
       setDepartments(data.departments || []);
     } catch (err) {
@@ -38,7 +38,7 @@ export default function AttendanceReport() {
 
   async function fetchSections() {
     try {
-      const res = await fetch(`http://employee-recognition-backend.onrender.com/api/students/sections?department=${selectedDept}&year=${selectedYear}`);
+      const res = await fetch(`https://employee-recognition-backend.onrender.com/api/students/sections?department=${selectedDept}&year=${selectedYear}`);
       const data = await res.json();
       setSections(data.sections || []);
     } catch (err) {
@@ -59,7 +59,7 @@ export default function AttendanceReport() {
 
     try {
       const res = await fetch(
-        `http://employee-recognition-backend.onrender.com/api/reports/attendance?department=${selectedDept}&year=${selectedYear}&section=${selectedSection}&date=${selectedDate}`
+        `https://employee-recognition-backend.onrender.com/api/reports/attendance?department=${selectedDept}&year=${selectedYear}&section=${selectedSection}&date=${selectedDate}`
       );
       const data = await res.json();
 
@@ -90,7 +90,7 @@ export default function AttendanceReport() {
     }
 
     try {
-      const res = await fetch('http://employee-recognition-backend.onrender.com/api/reports/mark-absent', {
+      const res = await fetch('https://employee-recognition-backend.onrender.com/api/reports/mark-absent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
